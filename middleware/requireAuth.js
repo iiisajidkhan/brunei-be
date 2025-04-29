@@ -17,7 +17,7 @@ module.exports = catchAsync(async (req, res, next) => {
       new AppError("You are not logged in! Please log in to get access.", 401),
     );
   }
-  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+  const decoded = await promisify(jwt.verify)(token, "1122@tailer");
   const currentUser = await User.findById(decoded?.user?._id)
     .select("+password")
   if (!currentUser) {

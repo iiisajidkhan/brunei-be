@@ -50,8 +50,8 @@ router.post("/register", async (req, res) => {
       // Generate JWT
       const token = jwt.sign(
         {user},
-        process.env.JWT_SECRET,
-        { expiresIn: "1h" }
+       "1122@tailer",
+        { expiresIn: "30d" }
       );
   
       res.status(200).json({

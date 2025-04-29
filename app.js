@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 // ✅ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect("mongodb+srv://sajid:Sajid@brunei.yw4ksmm.mongodb.net/brunei")
 .then(() => console.log("✅ MongoDB connected"))
 .catch((err) => console.error("❌ MongoDB connection error:", err));
 
