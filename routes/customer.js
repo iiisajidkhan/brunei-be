@@ -30,7 +30,12 @@ router.get("/get-all", async (req, res) => {
 
     if (search) {
       if (!isNaN(search)) {
-        searchQuery = { registerNumber: parseInt(search) };
+        searchQuery = {
+          $or: [
+            { registerNumber: parseInt(search) },
+            { phoneNumber: { $regex: search, $options: "i" } },
+          ],
+        };
       } else {
         searchQuery = {
           $or: [
